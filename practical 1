@@ -1,0 +1,222 @@
+NAME: MRUNMAI MANGESH MHASKAR
+ROLL NO.: 41    	STUDENTID: 5593818
+SUB: DATA STRUCTURE PRACTICALS
+
+
+
+
+
+
+                         	PRACTICAL 1
+1. Write a Program to Insert an Element in an Array.
+Code:
+arr = []
+n =int(input("Enter number of elements: "))
+for i in range(n):
+ num=int(input("Enter element: "))
+ arr.append(num)
+print("Original Array:", arr)
+position = int(input("Enter position to insert (1 to {}): ".format(n + 1)))
+element = int(input("Enter element to insert: "))
+arr.insert(position- 1, element)
+print("Array after insertion:")
+print(arr)
+output:
+Enter number of elements: 3
+Enter element: 13
+Enter element: 34
+Enter element: 23
+Original Array: [13, 34, 23]
+Enter position to insert (1 to 4): 6
+Enter element to insert: 12
+Array after insertion:
+[13, 34, 23, 12]
+
+
+
+
+
+
+                                   
+2. Write a Program to Access a Matrix Using Recursive Call.
+CODE:
+def display(matrix, rows, cols, i, j):
+    if i == rows:
+        return
+
+    print(matrix[i][j], end=" ")
+
+    if j == cols - 1:
+        print()
+        display(matrix, rows, cols, i + 1, 0)
+    else:
+        display(matrix, rows, cols, i, j + 1)
+
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+matrix = []
+
+print("Enter matrix elements:")
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    matrix.append(row)
+
+print("\nMatrix:")
+display(matrix, rows, cols, 0, 0)
+
+OUTPUT:
+Enter number of rows: 3
+Enter number of columns: 3
+Enter matrix elements:
+5
+7
+8
+9
+7
+3
+5
+7
+9
+
+Matrix:
+5 7 8 
+9 7 3 
+5 7 9 
+
+#3. Program to Perform Addition and Multiplication of Two 2D Arrays.
+CODE:
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+A = []
+B = []
+
+print("Enter elements of Matrix A")
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    A.append(row)
+
+print("Enter elements of Matrix B")
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    B.append(row)
+
+print("\nAddition of Matrices")
+for i in range(rows):
+    for j in range(cols):
+        print(A[i][j] + B[i][j], end=" ")
+    print()
+
+print("\nMultiplication of Matrices")
+result = []
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        total = 0
+        for k in range(cols):
+            total = total + A[i][k] * B[k][j]
+        row.append(total)
+    result.append(row)
+
+for i in range(rows):
+    for j in range(cols):
+        print(result[i][j], end=" ")
+    print()
+
+OUTPUT:
+Enter number of rows: 2
+Enter number of columns: 2
+Enter elements of Matrix A
+5
+9
+7
+4
+Enter elements of Matrix B
+3
+6
+5
+8
+
+Addition of Matrices
+8 15 
+12 12 
+
+Multiplication of Matrices
+60 102 
+41 74 
+
+
+
+4. Write a Program to Calculate the Transpose of a 2D Array.
+CODE:
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+matrix = []
+
+print("Enter matrix elements")
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    matrix.append(row)
+
+print("\nOriginal Matrix")
+
+for i in range(rows):
+    for j in range(cols):
+        print(matrix[i][j], end=" ")
+    print()
+
+print("\nTranspose Matrix")
+
+for j in range(cols):
+    for i in range(rows):
+        print(matrix[i][j], end=" ")
+    print()
+
+OUTPUT:
+Enter number of rows: 2
+Enter number of columns: 2
+Enter number of rows: 3
+Enter number of columns: 3
+Enter matrix elements
+13
+4
+54
+22
+23
+23
+20
+65
+45
+
+Original Matrix
+13 4 54 
+22 23 23 
+20 65 45 
+
+Transpose Matrix
+13 22 20 
+4 23 65 
+54 23 45 
+
+
+
+
+
+
+
+
+
