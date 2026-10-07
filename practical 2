@@ -1,0 +1,143 @@
+PRACTICAL 2
+
+1. Insert Element in Array. 
+CODE:
+arr=list(map(int,input("Enter elements: ").split()))
+pos=int(input("Position: "))
+val=int(input("Value: "))
+arr.insert(pos-1,val)
+print(arr)
+
+OUTPUT:
+Enter elements: 6
+Position: 8
+Value: 25
+[6, 25]
+
+
+2. Access Matrix Recursively 
+CODE:
+def show(a, i, j):
+    if i == len(a):
+        return
+
+    print(a[i][j], end=" ")
+
+    if j == len(a[0]) - 1:
+        print()
+        show(a, i + 1, 0)
+    else:
+        show(a, i, j + 1)
+
+
+r, c = map(int, input().split())
+
+a = [list(map(int, input().split())) for _ in range(r)]
+
+show(a, 0, 0)
+
+
+OUTPUT:
+2 3
+1 2 3
+4 5 6
+
+1 2 3 
+4 5 6 
+
+
+3. Matrix Addition and Multiplication 
+CODE:
+r, c = map(int, input().split())
+
+A = [list(map(int, input().split())) for _ in range(r)]
+B = [list(map(int, input().split())) for _ in range(r)]
+
+print("Addition")
+
+for i in range(r):
+    row = []
+    for j in range(c):
+        row.append(A[i][j] + B[i][j])
+    print(row)
+
+print("Multiplication")
+
+for i in range(r):
+    row = []
+    for j in range(c):
+        s = 0
+        for k in range(c):
+            s += A[i][k] * B[k][j]
+        row.append(s)
+    print(row)
+
+OUTPUT:
+2 2
+1 2
+3 4
+5 6
+7 8
+Addition
+[6, 8]
+[10, 12]
+Multiplication
+[19, 22]
+[43, 50]
+
+
+4. Transpose Matrix 
+CODE:
+r, c = map(int, input().split())
+
+a = [list(map(int, input().split())) for _ in range(r)]
+
+for j in range(c):
+    for i in range(r):
+        print(a[i][j], end=" ")
+    print()
+
+OUTPUT:
+3 5
+1 4 6
+2 5 4
+2 6 4
+
+1 2 2 
+4 5 6 
+6 4 4 
+
+
+5. Stack Using List 
+CODE:
+# Stack
+stack = []
+stack.append(10)
+stack.append(20)
+
+print(stack)
+print("Pop:", stack.pop())
+print(stack)
+
+# Linked List Insertion
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+head = Node(10)
+head.next = Node(20)
+head.next.next = Node(30)
+
+temp = head
+
+while temp:
+    print(temp.data, end=" ")
+    temp = temp.next
+
+OUTPUT:
+[10, 20]
+Pop: 20
+[10]
+10 20 30 
