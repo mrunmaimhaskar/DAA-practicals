@@ -1,0 +1,143 @@
+     PRACTICAL 5
+Pandas 
+Create a Pandas DataFrame containing student names and marks. 
+CODE:
+import pandas as pd
+ 
+data = {
+	"Name": ["Rahul", "Priya", "Amit", "Sneha"],
+	"Marks": [75, 85, 65, 90]
+}
+ 
+df = pd.DataFrame(data)
+ 
+print(df) 
+
+OUTPUT:
+    Name  Marks
+0  Rahul     75
+1  Priya     85
+2   Amit     65
+3  Sneha     90
+
+
+
+
+
+
+Display Statistical Information
+Create a DataFrame of student marks and display statistical information. 
+CODE:
+import pandas as pd
+ 
+data = {
+	"Name": ["Rahul", "Priya", "Amit", "Sneha"],
+	"Marks": [75, 85, 65, 90]
+}
+ 
+df = pd.DataFrame(data)
+ 
+print(df)
+print("\nStatistical Information:")
+print(df["Marks"].describe())
+ 
+OUTPUT:
+    Name  Marks
+0  Rahul     75
+1  Priya     85
+2   Amit     65
+3  Sneha     90
+
+Statistical Information:
+count     4.000000
+mean     78.750000
+std      11.086779
+min      65.000000
+25%      72.500000
+50%      80.000000
+75%      86.250000
+max      90.000000
+Name: Marks, dtype: float64
+
+
+
+Create Pandas Series from Dictionary
+Create a Pandas Series using a dictionary containing student names and marks. 
+CODE:
+import pandas as pd
+ 
+marks = {
+	"Rahul": 75,
+	"Priya": 85,
+	"Amit": 65,
+	"Sneha": 90
+}
+ 
+series = pd.Series(marks)
+ print(series)
+
+OUTPUT:
+Rahul    75
+Priya    85
+Amit     65
+Sneha    90
+dtype: int64
+
+
+
+Filter Pandas Series 
+Create a Pandas Series of marks and display only marks greater than 70. 
+CODE:
+import pandas as pd
+ 
+marks = pd.Series([55, 75, 80, 60, 90])
+ 
+result = marks[marks > 70]
+ 
+print("Marks greater than 70:")
+print(result) 
+
+OUTPUT:
+Marks greater than 70:
+1    75
+2    80
+4    90
+dtype: int64
+
+
+
+
+
+Simple Student Data Analysis
+Create a DataFrame containing student names, marks and attendance. Display students who have marks greater than 70. 
+CODE:
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha", "Kiran"],
+    "Marks": [75, 85, 60, 90, 65],
+    "Attendance": [80, 90, 75, 95, 70]
+}
+df = pd.DataFrame(data)
+
+print("Student Data:")
+print(df)
+
+print("\nStudents scoring more than 70:")
+print(df[df["Marks"] > 70])
+
+OUTPUT:
+Student Data:
+    Name  Marks  Attendance
+0  Rahul     75          80
+1  Priya     85          90
+2   Amit     60          75
+3  Sneha     90          95
+4  Kiran     65          70
+
+Students scoring more than 70:
+    Name  Marks  Attendance
+0  Rahul     75          80
+1  Priya     85          90
+3  Sneha     90          95
+                         
